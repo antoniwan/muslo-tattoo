@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+const CharacterGrid = ({ string }) => {
+  let charactersMarkup = [];
+  string.split("").map((character, index) => {
+    if (character !== " ") {
+      charactersMarkup.push(
+        <div key={`${index}-${character}`} className="character-wrapper">
+          <div
+            className={`character-item character-item-${character} character-item-${character}-${index}`}
+          >
+            {character}
+          </div>
+        </div>
+      );
+    }
+    return true;
+  });
+  return charactersMarkup;
+};
 
 function App() {
+  const affirmations = ["do better", "confia en tus sentidos", "eres valioso"];
+  const affirmationsString = affirmations.join("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="tattoo-area">
+      <div className="tattoo-area-wrapper">
+        <CharacterGrid string={affirmationsString} />
+      </div>
     </div>
   );
 }

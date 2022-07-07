@@ -1,38 +1,36 @@
-.App {
-  text-align: center;
+:root {
+  --skin-color-001: #F49966;
+  --skin-color-002: #E29867;
+  --skin-color-003: #F59370;
+  --skin-color-004: #F99463;
+  --skin-color-005: #EE9569;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.tattoo-area {
+  background: var(--skin-color-005);
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2rem;
+  width: calc(66px * 8); /* N characters long */
+  margin: 4rem auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.tattoo-area-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.character-wrapper {
+  width: 66px;
+  height: 66px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.character-item {
+  text-align: center;
+  text-transform: uppercase;
 }
